@@ -1,5 +1,5 @@
 {
-  "name": " ",
+  "name": "NYPL TechConnect Phase 2 JavaScript Portfolio Project",
   "version": "0.0.1",
   "description": "",
   "private": true,
@@ -19,6 +19,9 @@
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^5.10.0"
+    "webpack-merge": "^5.10.0",
+    "eslint": "^9.26.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.19.1"
   }
 }

@@ -1,3 +1,5 @@
+import { applyTheme, getActiveTheme, saveTheme } from "./utils/saveTheme";
+
 const themeToggleBtn = document.getElementById("themeToggle");
 
 // Set init state
@@ -28,20 +30,6 @@ function loadPreferences() {
   return { theme };
 }
 
-// Light / Dark Mode theme logic
-function getActiveTheme() {
-  return document.body.classList.contains("dark-mode") ? "light" : "dark-mode";
-}
-
-// Apply theme
-function applyTheme(theme) {
-  document.body.classList.toggle("dark-mode", theme === "dark-mode");
-}
-// Save theme
-function saveTheme(theme) {
-  localStorage.setItem("theme", theme === "dark-mode" ? "dark-mode" : "");
-}
-
 // Event listener
 themeToggleBtn.addEventListener("click", handleThemeToggle);
 
@@ -51,3 +39,11 @@ function handleThemeToggle() {
   saveTheme(currentTheme);
   applyTheme(currentTheme);
 }
+
+// Popup link descriptors
+document.querySelectorAll(".popup-live").forEach((link) => {
+  link.setAttribute("title", "Visit Live Site" + link.textContent);
+});
+document.querySelectorAll(".popup-github").forEach((link) => {
+  link.setAttribute("title", "See the Code" + link.textContent);
+});

@@ -8,7 +8,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 16px;
-  background-color: #f9fafb;
+  background-color: #efefef;
   color: #1f2937;
   line-height: 1.4;
   transition: all 0.3s ease;
@@ -449,6 +449,7 @@ h1, h2, h3 {
 
 .project-img {
   height: 200px;
+  width: auto;
   overflow: hidden;
 }
 
@@ -583,6 +584,10 @@ h1, h2, h3 {
 
 
 /* Contact Section */
+.contact-content a {
+  color: #6366f1;
+}
+
 .contact-content {
   display: flex;
   gap: 3rem;
@@ -661,6 +666,7 @@ textarea {
 }
 
 .footer-logo a {
+  justify-content: left;
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;

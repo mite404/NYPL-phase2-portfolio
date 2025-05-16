@@ -469,6 +469,11 @@ h1, h2, h3 {
   transform: translateY(-68px);
 }
 
+#flight-deals {
+  position: relative;
+  left: -70px;
+}
+
 .dark-mode .img-placeholder {
   background-color: #374151;
 }

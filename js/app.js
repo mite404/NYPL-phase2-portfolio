@@ -1,6 +1,8 @@
 import { applyTheme, getActiveTheme, saveTheme } from "./utils/saveTheme";
 
 const themeToggleBtn = document.getElementById("themeToggle");
+const projectItems = document.querySelectorAll(".project-card");
+const filterBtns = document.querySelectorAll(".filter-btn");
 
 // Set init state
 
@@ -30,6 +32,7 @@ function loadPreferences() {
   return { theme };
 }
 
+// Theme selector logic
 // Event listener
 themeToggleBtn.addEventListener("click", handleThemeToggle);
 
@@ -46,4 +49,33 @@ document.querySelectorAll(".popup-live").forEach((link) => {
 });
 document.querySelectorAll(".popup-github").forEach((link) => {
   link.setAttribute("title", "See the Code" + link.textContent);
+});
+
+// Project filter buttons logic
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    // Store clicked button
+    const clickedBtn = event.currentTarget;
+
+    // Remove active class from all buttons
+    filterBtns.forEach((btn) => btn.classList.remove("active"));
+
+    // Add active class to clicked button
+    clickedBtn.classList.add("active");
+
+    // Get filter value
+    const filterValue = clickedBtn.getAttribute("data-filter");
+
+    // Show/hide projects based on filter
+    projectItems.forEach((item) => {
+      if (
+        filterValue === "all" ||
+        item.getAttribute("data-category") === filterValue
+      ) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
 });
